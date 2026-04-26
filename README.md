@@ -1,11 +1,11 @@
-# 📈 Data Generation using Monte Carlo Simulation (GBM) for Machine Learning
+# Data Generation using Monte Carlo Simulation (GBM) for Machine Learning
 
 ## Assignment Overview
 This project fulfills the **Data Generation using Modelling and Simulation for Machine Learning** assignment by using **Geometric Brownian Motion (GBM)** — the industry-standard stochastic financial model — to generate a dataset, then training and comparing 11 ML regression models on it.
 
 ---
 
-## 🔬 Step 1 & 2: Simulation Tool — Geometric Brownian Motion
+## Step 1 & 2: Simulation Tool — Geometric Brownian Motion
 
 **Simulator**: Custom NumPy-based GBM (no external finance package needed)
 
@@ -25,7 +25,7 @@ $$S_t = S_0 \cdot e^{(\mu - \frac{\sigma^2}{2})t + \sigma W_t}$$
 
 ---
 
-## 📊 Step 3: Parameters and Their Bounds
+## Step 3: Parameters and Their Bounds
 
 | Parameter | Description | Lower Bound | Upper Bound | Unit |
 |-----------|-------------|:-----------:|:-----------:|------|
@@ -44,7 +44,7 @@ $$S_t = S_0 \cdot e^{(\mu - \frac{\sigma^2}{2})t + \sigma W_t}$$
 
 ---
 
-## ⚙️ Step 4: How the Simulator Works
+## Step 4: How the Simulator Works
 
 For each simulation run:
 
@@ -66,7 +66,7 @@ For each simulation run:
 
 ---
 
-## 🔁 Step 5: 1000 Simulations
+## Step 5: 1000 Simulations
 
 - **N_SIMULATIONS = 1000**
 - Each run independently samples all 5 parameters and runs the full GBM path
@@ -82,7 +82,7 @@ For each simulation run:
 
 ---
 
-## 🤖 Step 6: ML Model Comparison
+## Step 6: ML Model Comparison
 
 **Task**: Regression — predict `total_return` from simulation input parameters
 
@@ -90,7 +90,7 @@ For each simulation run:
 **Scaling**: StandardScaler applied where needed (linear models, KNN, SVR)  
 **Cross-validation**: 5-Fold CV R² reported for generalization assessment
 
-### 📋 Model Comparison Table
+### Model Comparison Table
 
 | Rank | Model | RMSE | MAE | R² (Test) | R² (CV-5) | Train Time (s) |
 |------|-------|------|-----|-----------|-----------|----------------|
@@ -108,7 +108,7 @@ For each simulation run:
 
 > *(Exact values generated at runtime — see notebook output)*
 
-### 🏆 Best Model: LightGBM
+### Best Model: LightGBM
 
 **Why LightGBM wins:**
 - Gradient boosting excels at capturing the **non-linear interaction** between μ, σ, and T in GBM outputs
@@ -122,7 +122,7 @@ For each simulation run:
 
 ---
 
-## 📈 Result Graphs
+## Result Graphs
 
 | Graph | Description |
 |-------|-------------|
@@ -132,7 +132,7 @@ For each simulation run:
 
 ---
 
-## 🗂️ Repository Structure
+## Repository Structure
 
 ```
 ├── GBM_Stock_Simulation_ML.ipynb   # Main Colab notebook
@@ -146,7 +146,7 @@ For each simulation run:
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 1. Open `GBM_Stock_Simulation_ML.ipynb` in [Google Colab](https://colab.research.google.com/)
 2. Click **Runtime → Run all**
@@ -154,7 +154,7 @@ For each simulation run:
 
 ---
 
-## 📚 References
+## References
 
 - Black, F. & Scholes, M. (1973). *The Pricing of Options and Corporate Liabilities*. Journal of Political Economy.
 - Hull, J.C. (2018). *Options, Futures, and Other Derivatives* (10th ed.). Pearson.
